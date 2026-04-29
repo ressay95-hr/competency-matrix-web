@@ -1,25 +1,296 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { useState, useMemo } from 'react';
+import { ChevronDown, Search, Filter } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import competencyData from '@/data/competency_data.json';
+import CompetencyCard from '@/components/CompetencyCard';
+import LevelVisualization from '@/components/LevelVisualization';
 
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Home Page - Competency Matrix & Advancement Guide
+ * 
+ * Design Philosophy: Modern Professional with Progressive Disclosure
+ * - Color: Deep blue (#1e40af) with teal accents (#0d9488)
+ * - Typography: Poppins Bold for headers, Inter for body
+ * - Layout: Vertical progression showing career advancement
+ * - Interaction: Progressive disclosure through expandable cards
  */
+
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const [selectedLevel, setSelectedLevel] = useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [competencyTypeFilter, setCompetencyTypeFilter] = useState<'all' | 'core' | 'common' | 'technical'>('all');
+  const [expandedCompetencies, setExpandedCompetencies] = useState<Set<string>>(new Set());
+
+  // Filter competencies based on search and type
+  const filteredCompetencies = useMemo(() => {
+    const query = searchQuery.toLowerCase();
+    
+    let filtered: any = {
+      core: competencyData.core_competencies,
+      common: competencyData.common_competencies,
+      technical: competencyData.technical_competencies,
+    };
+
+    if (competencyTypeFilter !== 'all') {
+      if (competencyTypeFilter === 'core') {
+        filtered = { core: filtered.core };
+      } else if (competencyTypeFilter === 'common') {
+        filtered = { common: filtered.common };
+      } else if (competencyTypeFilter === 'technical') {
+        filtered = { technical: filtered.technical };
+      }
+    }
+
+    // Filter by search query
+    if (query) {
+      Object.keys(filtered).forEach(key => {
+        if (key === 'technical') {
+          filtered[key] = Object.fromEntries(
+            Object.entries(filtered[key]).map(([family, competencies]: any) => [
+              family,
+              competencies.filter((c: any) => 
+                c.name.toLowerCase().includes(query) ||
+                c.levels.toString().toLowerCase().includes(query)
+              )
+            ]).filter(([_, competencies]: any) => competencies.length > 0)
+          );
+        } else {
+          filtered[key] = filtered[key].filter((c: any) =>
+            c.name.toLowerCase().includes(query) ||
+            c.definition.toLowerCase().includes(query)
+          );
+        }
+      });
+    }
+
+    return filtered;
+  }, [searchQuery, competencyTypeFilter]);
+
+  const toggleCompetency = (id: string) => {
+    const newSet = new Set(expandedCompetencies);
+    if (newSet.has(id)) {
+      newSet.delete(id);
+    } else {
+      newSet.add(id);
+    }
+    setExpandedCompetencies(newSet);
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-teal-700 py-20 text-white">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl font-bold mb-6 leading-tight">Your Path to Excellence</h1>
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              Discover the competencies that define success at every level of our organization. 
+              This matrix outlines the skills, behaviors, and expertise required to advance your career 
+              and achieve your professional goals.
+            </p>
+            <div className="flex gap-4">
+              <Button 
+                onClick={() => {
+                  const element = document.getElementById('matrix-section');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-teal-500 hover:bg-teal-600 text-white"
+              >
+                Explore the Matrix
+              </Button>
+              <Button variant="outline" className="border-white text-white hover:bg-white/10">
+                Learn More
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section className="py-16 bg-white border-b border-gray-200">
+        <div className="container">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl font-bold text-blue-900">4</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Career Levels</h3>
+              <p className="text-gray-600">From Entry Level to Top Management, each with distinct competency requirements</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl font-bold text-teal-900">3</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Competency Types</h3>
+              <p className="text-gray-600">Core, Common, and Technical-Functional competencies tailored to your role</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                <span className="text-2xl font-bold text-blue-900">∞</span>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Growth Potential</h3>
+              <p className="text-gray-600">Clear pathways and behavioral indicators for continuous development</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Level Visualization */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12">Career Progression Framework</h2>
+          <LevelVisualization levels={competencyData.levels} />
+        </div>
+      </section>
+
+      {/* Matrix Section */}
+      <section id="matrix-section" className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Competency Matrix</h2>
+          
+          {/* Search and Filter */}
+          <div className="mb-8 flex flex-col md:flex-row gap-4">
+            <div className="flex-1 relative">
+              <Search className="absolute left-3 top-3 text-gray-400" size={20} />
+              <Input
+                placeholder="Search competencies..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant={competencyTypeFilter === 'all' ? 'default' : 'outline'}
+                onClick={() => setCompetencyTypeFilter('all')}
+                className="text-sm"
+              >
+                All
+              </Button>
+              <Button
+                variant={competencyTypeFilter === 'core' ? 'default' : 'outline'}
+                onClick={() => setCompetencyTypeFilter('core')}
+                className="text-sm"
+              >
+                Core
+              </Button>
+              <Button
+                variant={competencyTypeFilter === 'common' ? 'default' : 'outline'}
+                onClick={() => setCompetencyTypeFilter('common')}
+                className="text-sm"
+              >
+                Common
+              </Button>
+              <Button
+                variant={competencyTypeFilter === 'technical' ? 'default' : 'outline'}
+                onClick={() => setCompetencyTypeFilter('technical')}
+                className="text-sm"
+              >
+                Technical
+              </Button>
+            </div>
+          </div>
+
+          {/* Core Competencies */}
+          {(competencyTypeFilter === 'all' || competencyTypeFilter === 'core') && 
+           filteredCompetencies.core && filteredCompetencies.core.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <span className="w-3 h-3 bg-blue-600 rounded-full"></span>
+                Core Competencies (All Employees)
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {filteredCompetencies.core.map((competency: any) => (
+                  <CompetencyCard
+                    key={competency.name}
+                    competency={competency}
+                    type="core"
+                    isExpanded={expandedCompetencies.has(competency.name)}
+                    onToggle={() => toggleCompetency(competency.name)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Common Competencies */}
+          {(competencyTypeFilter === 'all' || competencyTypeFilter === 'common') && 
+           filteredCompetencies.common && filteredCompetencies.common.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <span className="w-3 h-3 bg-teal-600 rounded-full"></span>
+                Common Competencies (By Job Level)
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {filteredCompetencies.common.map((competency: any) => (
+                  <CompetencyCard
+                    key={competency.name}
+                    competency={competency}
+                    type="common"
+                    isExpanded={expandedCompetencies.has(competency.name)}
+                    onToggle={() => toggleCompetency(competency.name)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Technical-Functional Competencies */}
+          {(competencyTypeFilter === 'all' || competencyTypeFilter === 'technical') && 
+           filteredCompetencies.technical && Object.keys(filteredCompetencies.technical).length > 0 && (
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <span className="w-3 h-3 bg-blue-500 rounded-full"></span>
+                Technical-Functional Competencies (By Job Family)
+              </h3>
+              {Object.entries(filteredCompetencies.technical).map(([family, competencies]: any) => (
+                <div key={family} className="mb-8">
+                  <h4 className="text-lg font-semibold text-gray-700 mb-4 capitalize">{family}</h4>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {competencies.map((competency: any) => (
+                      <CompetencyCard
+                        key={`${family}-${competency.name}`}
+                        competency={competency}
+                        type="technical"
+                        isExpanded={expandedCompetencies.has(`${family}-${competency.name}`)}
+                        onToggle={() => toggleCompetency(`${family}-${competency.name}`)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* No Results */}
+          {Object.values(filteredCompetencies).every((arr: any) => 
+            Array.isArray(arr) ? arr.length === 0 : Object.keys(arr).length === 0
+          ) && (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">No competencies match your search criteria.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-teal-700 text-white">
+        <div className="container text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Advance Your Career?</h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Use this matrix as a guide for your professional development. Discuss your competency goals with your manager and create a personalized growth plan.
+          </p>
+          <Button className="bg-white text-blue-900 hover:bg-blue-50">
+            Download Your Development Plan
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }

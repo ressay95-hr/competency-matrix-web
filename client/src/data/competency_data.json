@@ -1,0 +1,157 @@
+{
+  "levels": [
+    { "id": 1, "name": "Entry Level", "roles": "Workers, Drivers, Technicians, Assistant Technicians, Specialists" },
+    { "id": 2, "name": "Supervisory Level", "roles": "Supervisors, Supervisor Technicians, Leads" },
+    { "id": 3, "name": "Middle Management", "roles": "Head of Departments, Shift Leaders, Section Heads" },
+    { "id": 4, "name": "Top Management", "roles": "Deputies, Department Managers, Directors" }
+  ],
+  "core_competencies": [
+    {
+      "name": "Communication & Influence",
+      "definition": "Interacting with others openly and effectively demonstrating accuracy, transparency, and clarity.",
+      "levels": {
+        "1": "Expresses perspective clearly; listens to others; uses appropriate body language.",
+        "2": "Conveys meaning concisely; seeks to influence others; prevents arguments in discussions.",
+        "3": "Conveys complex issues simply; balances speaking/listening; builds sustainable relationships.",
+        "4": "Models persuasive strategies; drives cross-departmental communication; understands group dynamics."
+      }
+    },
+    {
+      "name": "Collaboration & Teamwork",
+      "definition": "Communicating within and across groups to create alignment and share information.",
+      "levels": {
+        "1": "Shows respect; shares expertise; values input from others; encourages sharing views.",
+        "2": "Communicates clear vision; creates sharing environment; works towards consensus-based solutions.",
+        "3": "Facilitates cross-functional teams; removes barriers; fosters collaboration across teams.",
+        "4": "Enhances outcomes through partnerships; drives fair culture; accessible despite seniority."
+      }
+    }
+  ],
+  "common_competencies": [
+    {
+      "name": "Adaptability",
+      "definition": "Adjusting behaviors to work efficiently in light of new information or environments.",
+      "levels": {
+        "1": "Seeks guidance in new situations; works in different conditions; adheres to rules.",
+        "2": "Adjusts to changes; handles multiple tasks; maintains performance under pressure."
+      }
+    },
+    {
+      "name": "Punctuality & Accountability",
+      "definition": "Responsibility for timeliness, commitment to tasks, and adherence to standards.",
+      "levels": {
+        "1": "Follows attendance rules; meets deadlines; takes responsibility for own work.",
+        "2": "Ensures team meets deadlines; takes measures to address group shortcomings."
+      }
+    },
+    {
+      "name": "Health & Safety Awareness",
+      "definition": "Adherence to health and safety laws to maintain a safe work environment.",
+      "levels": {
+        "1": "Organizes workspace safely; adheres to procedural instructions.",
+        "2": "Monitors safety standards; identifies and reports hazards."
+      }
+    },
+    {
+      "name": "Taking Initiative & Drive for Results",
+      "definition": "Proactively taking action to address problems and achieve KPIs.",
+      "levels": {
+        "1": "Demonstrates 'can do' attitude; committed to deadlines; persists if initial attempts fail.",
+        "2": "Acts quickly in sensitive situations; monitors KPIs; takes remedial action."
+      }
+    },
+    {
+      "name": "Continuous Learning",
+      "definition": "Identifying strengths/weaknesses to enhance personal and team performance.",
+      "levels": {
+        "2": "Self-assesses; seeks feedback; pursues learning opportunities; integrates new learning.",
+        "3": "Identifies development needs for others; coaches team; promotes learning culture."
+      }
+    },
+    {
+      "name": "Coaching & Leading Others",
+      "definition": "Encouraging performance and fulfilling skill requirements of individuals and the organization.",
+      "levels": {
+        "3": "Suggests development activities; coaches through feedback; leads by example.",
+        "4": "Mentors high-potential employees; develops leadership pipeline; inspires vision."
+      }
+    }
+  ],
+  "technical_competencies": {
+    "Production": [
+      {
+        "name": "Technical Credibility",
+        "levels": {
+          "1": "Applies basic procedures and regulations for service delivery.",
+          "2": "Acquires new skills; monitors performance to ensure instructions are applied.",
+          "3": "Works within guidelines; considers alternatives when guidelines are inappropriate.",
+          "4": "Demonstrates high-level technical abilities; motivates others to meet standards.",
+          "5": "Develops program goals; hires experts; addresses organizational training needs."
+        }
+      },
+      {
+        "name": "Managing Operation Process",
+        "levels": {
+          "1": "Follows instructions and SOPs; follows GMP.",
+          "2": "Operates machines independently; detects problems; communicates with maintenance.",
+          "3": "Monitors performance of others; does machine work schedules; analyzes downtime.",
+          "4": "Enhances staff performance; reviews OEE; takes corrective/preventive actions.",
+          "5": "Sets strategic KPIs; does gap analysis; reports to CEO on production performance."
+        }
+      }
+    ],
+    "Engineering": [
+      {
+        "name": "Technical Credibility",
+        "levels": {
+          "1": "Applies basic procedures and regulations.",
+          "2": "Acquires and applies new skills to keep current in field.",
+          "3": "Applies university/training learning on the job; considers alternatives.",
+          "4": "Reinforces others to do the job according to standards.",
+          "5": "Hires supervisors with appropriate mix of technical/managerial expertise."
+        }
+      },
+      {
+        "name": "Maintenance & Repair",
+        "levels": {
+          "1": "Follows instructions and SOPs.",
+          "2": "Inspects machines; determines causes of errors; troubleshoots according to procedures.",
+          "3": "Implements maintenance plans; creates machine URS; understands PLCs.",
+          "4": "Oversees installation and repair; ensures machines function to specifications.",
+          "5": "Keeps updated on cutting-edge technology; establishes safety procedures."
+        }
+      }
+    ],
+    "Supply Chain (Procurement)": [
+      {
+        "name": "Purchasing Techniques & Methods",
+        "levels": {
+          "1": "Applies basic knowledge of procurement laws and accounting principles.",
+          "2": "Applies thorough knowledge of methods; stays abreast of changes; proposes revisions.",
+          "3": "Applies expert knowledge; analyzes complex issues; demonstrates innovation.",
+          "4": "Develops long-term leading practice approaches; understands global supply landscape."
+        }
+      },
+      {
+        "name": "Supplier Evaluation & Selection",
+        "levels": {
+          "1": "Provides tactical support; aware of importance of supplier development.",
+          "2": "Identifies potential sources; manages recommended source lists.",
+          "3": "Applies development techniques; develops partnership working; specifies evaluation factors.",
+          "4": "Identifies latest thinking; creates strategic relationships with core suppliers."
+        }
+      }
+    ],
+    "Supply Chain (Planning)": [
+      {
+        "name": "Planning Management",
+        "levels": {
+          "1": "Understands basic planning framework and macroeconomic principles.",
+          "2": "Uses knowledge to formulate plans; analyzes data and discerns trends.",
+          "3": "Leads formulation of plans; guides colleagues in macroeconomic analysis.",
+          "4": "Mentors colleagues in planning/budgeting keeping with national priorities."
+        }
+      }
+    ]
+  }
+}
