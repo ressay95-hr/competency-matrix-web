@@ -10,22 +10,22 @@ interface CompetencyCardProps {
 
 const typeColors = {
   core: {
-    bg: 'bg-blue-50',
-    border: 'border-blue-200',
-    badge: 'bg-blue-100 text-blue-700',
-    header: 'text-blue-900',
+    bg: 'bg-red-50',
+    border: 'border-red-200',
+    badge: 'bg-red-100 text-red-700',
+    header: 'text-red-900',
   },
   common: {
-    bg: 'bg-teal-50',
-    border: 'border-teal-200',
-    badge: 'bg-teal-100 text-teal-700',
-    header: 'text-teal-900',
+    bg: 'bg-amber-50',
+    border: 'border-amber-200',
+    badge: 'bg-amber-100 text-amber-700',
+    header: 'text-amber-900',
   },
   technical: {
-    bg: 'bg-indigo-50',
-    border: 'border-indigo-200',
-    badge: 'bg-indigo-100 text-indigo-700',
-    header: 'text-indigo-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    badge: 'bg-gray-100 text-gray-700',
+    header: 'text-gray-900',
   },
 };
 
@@ -83,7 +83,7 @@ export default function CompetencyCard({
               {Object.entries(levels).map(([level, description]) => (
                 <div key={level} className="flex gap-3">
                   <div className="flex-shrink-0">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 text-white text-xs font-bold">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-red-600 to-amber-600 text-white text-xs font-bold">
                       {level}
                     </span>
                   </div>

@@ -9,28 +9,44 @@ interface Level {
 
 interface LevelVisualizationProps {
   levels: Level[];
+  selectedLevel?: number | null;
+  onSelectLevel?: (levelId: number | null) => void;
 }
 
 const levelColors = [
-  { bg: 'bg-blue-100', border: 'border-blue-300', text: 'text-blue-900', accent: 'bg-blue-500' },
-  { bg: 'bg-blue-200', border: 'border-blue-400', text: 'text-blue-900', accent: 'bg-blue-600' },
-  { bg: 'bg-blue-300', border: 'border-blue-500', text: 'text-blue-950', accent: 'bg-blue-700' },
-  { bg: 'bg-blue-900', border: 'border-blue-950', text: 'text-white', accent: 'bg-blue-950' },
+  { bg: 'bg-amber-100', border: 'border-amber-300', text: 'text-amber-900', accent: 'bg-amber-600', selectedBg: 'bg-amber-200', selectedBorder: 'border-amber-500' },
+  { bg: 'bg-red-100', border: 'border-red-300', text: 'text-red-900', accent: 'bg-red-600', selectedBg: 'bg-red-200', selectedBorder: 'border-red-500' },
+  { bg: 'bg-red-200', border: 'border-red-400', text: 'text-red-950', accent: 'bg-red-700', selectedBg: 'bg-red-300', selectedBorder: 'border-red-600' },
+  { bg: 'bg-red-900', border: 'border-red-950', text: 'text-white', accent: 'bg-red-950', selectedBg: 'bg-red-800', selectedBorder: 'border-red-800' },
 ];
 
-export default function LevelVisualization({ levels }: LevelVisualizationProps) {
+export default function LevelVisualization({ 
+  levels, 
+  selectedLevel,
+  onSelectLevel 
+}: LevelVisualizationProps) {
   return (
     <div className="flex flex-col items-center gap-6">
       {levels.map((level, index) => {
         const colors = levelColors[index];
+        const isSelected = selectedLevel === level.id;
         const isLast = index === levels.length - 1;
 
         return (
           <React.Fragment key={level.id}>
             {/* Level Card */}
             <div className="w-full max-w-2xl">
-              <div
-                className={`${colors.bg} border-2 ${colors.border} rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer`}
+              <button
+                onClick={() => {
+                  if (onSelectLevel) {
+                    onSelectLevel(isSelected ? null : level.id);
+                  }
+                }}
+                className={`w-full text-left transition-all duration-300 ${
+                  isSelected 
+                    ? `${colors.selectedBg} border-2 ${colors.selectedBorder} shadow-lg scale-105` 
+                    : `${colors.bg} border-2 ${colors.border} hover:shadow-lg hover:scale-105`
+                } rounded-lg p-6 cursor-pointer`}
               >
                 <div className="flex items-center gap-4">
                   <div className={`${colors.accent} w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0`}>
@@ -44,16 +60,21 @@ export default function LevelVisualization({ levels }: LevelVisualizationProps) 
                       {level.roles}
                     </p>
                   </div>
+                  {isSelected && (
+                    <div className="text-sm font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">
+                      Selected
+                    </div>
+                  )}
                 </div>
-              </div>
+              </button>
             </div>
 
             {/* Arrow Between Levels */}
             {!isLast && (
               <div className="flex flex-col items-center gap-2">
-                <div className="w-1 h-8 bg-gradient-to-b from-blue-400 to-blue-300"></div>
-                <ArrowDown size={20} className="text-blue-400" />
-                <div className="w-1 h-8 bg-gradient-to-b from-blue-300 to-blue-200"></div>
+                <div className="w-1 h-8 bg-gradient-to-b from-red-400 to-red-300"></div>
+                <ArrowDown size={20} className="text-red-400" />
+                <div className="w-1 h-8 bg-gradient-to-b from-red-300 to-red-200"></div>
               </div>
             )}
           </React.Fragment>
@@ -63,8 +84,8 @@ export default function LevelVisualization({ levels }: LevelVisualizationProps) 
       {/* Bottom Message */}
       <div className="mt-8 text-center">
         <p className="text-gray-600 text-sm max-w-xl">
-          Each level builds upon the previous one. Master the competencies at your current level, 
-          then progressively develop the skills needed for advancement.
+          Click on a level to view the specific competencies required for that career stage. 
+          Each level builds upon the previous one, creating a clear progression path.
         </p>
       </div>
     </div>
