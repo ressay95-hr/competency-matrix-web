@@ -42,7 +42,7 @@ export default function CompetencyCard({
   onToggle,
 }: CompetencyCardProps) {
   const colors = typeColors[type];
-  const levels = competency.levels;
+  const levels = competency.levels || competency.indicators || {};
 
   return (
     <Card
@@ -74,26 +74,38 @@ export default function CompetencyCard({
         {/* Expandable Content */}
         <div
           className={`overflow-hidden transition-all duration-300 ${
-            isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            isExpanded ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
           <div className="pt-4 border-t border-gray-200">
             <h4 className="font-semibold text-gray-900 mb-3 text-sm">Behavioral Indicators by Level</h4>
-            <div className="space-y-3">
-              {Object.entries(levels).map(([level, description]) => (
-                <div key={level} className="flex gap-3">
-                  <div className="flex-shrink-0">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-red-600 to-amber-600 text-white text-xs font-bold">
-                      {level}
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      {String(description)}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="space-y-4">
+              {levels && typeof levels === 'object' ? (
+                Object.entries(levels).map(([level, items]: [string, any]) => {
+                  const indicators = Array.isArray(items) ? items : (items ? [String(items)] : []);
+                  if (indicators.length === 0) return null;
+                  return (
+                    <div key={level} className="">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-red-600 to-amber-600 text-white text-xs font-bold">
+                          {level}
+                        </span>
+                        <span className="text-xs font-semibold text-gray-600">Level {level}</span>
+                      </div>
+                      <ul className="space-y-1 ml-8">
+                        {indicators.map((indicator: string, idx: number) => (
+                          <li key={idx} className="text-sm text-gray-700 leading-relaxed flex gap-2">
+                            <span className="text-red-600 font-bold">•</span>
+                            <span>{indicator}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })
+              ) : (
+                <p className="text-gray-600 text-sm">No behavioral indicators available</p>
+              )}
             </div>
           </div>
         </div>

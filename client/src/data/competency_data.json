@@ -10,20 +10,20 @@
       "name": "Communication & Influence",
       "definition": "Interacting with others openly and effectively demonstrating accuracy, transparency, and clarity.",
       "levels": {
-        "1": "Expresses perspective clearly; listens to others; uses appropriate body language.",
-        "2": "Conveys meaning concisely; seeks to influence others; prevents arguments in discussions.",
-        "3": "Conveys complex issues simply; balances speaking/listening; builds sustainable relationships.",
-        "4": "Models persuasive strategies; drives cross-departmental communication; understands group dynamics."
+        "1": ["Can express own perspective clearly and concisely", "Listens to others and uses relevant questions to gather information", "Explains and justifies point of view objectively", "Body language is appropriate and consistent with non-verbal messages"],
+        "2": ["Focuses on the issues and conveys the meaning concisely and effectively", "Is accessible and gives others time to fully express their thoughts", "Actively seeks to influence others before a decision is made", "Prevents arguments and ensures focus is maintained throughout discussions"],
+        "3": ["Uses simple language to effectively convey complex issues", "Balances speaking with listening; encourages involvement of others", "Utilizes chains of indirect influence and designs tactics to promote ideas", "Responds positively and professionally to questions and challenges"],
+        "4": ["Role models effective and persuasive communication strategies", "Drives good cross departmental communication", "Uses in-depth understanding of the person or organization to influence", "Uses in-depth understanding of group dynamics to achieve objectives"]
       }
     },
     {
       "name": "Collaboration & Teamwork",
       "definition": "Communicating within and across groups to create alignment and share information.",
       "levels": {
-        "1": "Shows respect; shares expertise; values input from others; encourages sharing views.",
-        "2": "Communicates clear vision; creates sharing environment; works towards consensus-based solutions.",
-        "3": "Facilitates cross-functional teams; removes barriers; fosters collaboration across teams.",
-        "4": "Enhances outcomes through partnerships; drives fair culture; accessible despite seniority."
+        "1": ["Demonstrates respect for others and works productively with a broad range of individuals", "Acts to promote the team, organization and its goals", "Shares information and own expertise with others", "Values and acknowledges the input and know-how of other team members"],
+        "2": ["Communicates a clear vision of team goals and objectives", "Creates an environment in which team members share both risks and rewards", "Focuses the team's efforts on both the process and desired outcome", "Acknowledges diverse views and works towards consensus-based solutions"],
+        "3": ["Facilitates formation of cross-functional and cross-departmental teams", "Demonstrates personal commitment to the maintenance of relationships", "Encourages collaboration by constructing clear team objectives", "Removes barriers and fosters collaboration across teams"],
+        "4": ["Develops and fosters opportunities to enhance outcomes through partnerships and alliances", "Encourages and negotiates sharing of information and skills across organization", "Develops processes that give credit and recognition to teams", "Drives a culture in which people are treated fairly and equitably"]
       }
     }
   ],
@@ -32,120 +32,88 @@
       {
         "name": "Adaptability",
         "definition": "Adjusting behaviors to work efficiently in light of new information or environments.",
-        "levels": {
-          "1": "Seeks guidance in new situations; works in different conditions; adheres to rules."
-        }
+        "indicators": ["Seeks guidance in adapting behaviour to the needs of a new or different situation", "Works actively in different work conditions, places, time and circumstances", "Adheres to all Al Esraa's rules, systems, procedures and framework religiously"]
       },
       {
         "name": "Punctuality & Accountability",
         "definition": "Responsibility for timeliness, commitment to tasks, and adherence to standards.",
-        "levels": {
-          "1": "Follows attendance rules; meets deadlines; takes responsibility for own work."
-        }
+        "indicators": ["Follows rules and expectations for work attendance and performance", "Provides advance notice of intended absence and/or Tardiness", "Perseveres through various working conditions to complete tasks"]
       },
       {
         "name": "Health & Safety Awareness",
         "definition": "Adherence to health and safety laws to maintain a safe work environment.",
-        "levels": {
-          "1": "Organizes workspace safely; adheres to procedural instructions."
-        }
+        "indicators": ["Carefully organizes the personal workspace to minimize the likelihood of an accident", "Consistently adheres to detailed procedural instructions to carry out work activities safely"]
       },
       {
         "name": "Taking Initiative & Drive for Results",
         "definition": "Proactively taking action to address problems and achieve KPIs.",
-        "levels": {
-          "1": "Demonstrates 'can do' attitude; committed to deadlines; persists if initial attempts fail."
-        }
+        "indicators": ["Is energetic and applies self to the task at hand", "Demonstrates a 'can do' attitude to the delivery of KPI's", "Accepts ambitious targets and invests energy to deliver these", "Is committed to deadlines and timelines", "Persists and adopts different approaches if initial attempts are not successful"]
       }
     ],
     "2": [
       {
         "name": "Taking Initiative & Drive for Results",
-        "definition": "Proactively taking action to address problems and achieve KPIs.",
-        "levels": {
-          "2": "Acts quickly in sensitive situations; monitors KPIs; takes remedial action."
-        }
+        "definition": "Displays responsiveness and determination to complete the task to quality expectations.",
+        "indicators": ["Displays responsiveness and determination to complete the task to quality expectations", "Constantly tries to improve own and/or the team's performance", "Acts quickly and decisively in a time-sensitive situation", "Monitors and measures key performance indicators, takes remedial action were required", "Identifies future problems, communicates these and takes proactive steps", "Shows willingness to work overtime in order to meet set deadlines"]
       },
       {
         "name": "Continuous Learning",
         "definition": "Identifying strengths/weaknesses to enhance personal and team performance.",
-        "levels": {
-          "2": "Self-assesses; seeks feedback; pursues learning opportunities; integrates new learning."
-        }
+        "indicators": ["Continually self-assesses and seeks feedback from others to identify strengths and weaknesses", "Consistently rely on himself in implementing self-development plans and actions", "Pursues learning opportunities and on-going development", "Takes advantage of learning opportunities (e.g., courses, observation of others, assignments)", "Integrates new learning into work methods"]
       },
       {
         "name": "Punctuality & Accountability",
         "definition": "Responsibility for timeliness, commitment to tasks, and adherence to standards.",
-        "levels": {
-          "2": "Ensures team meets deadlines; takes measures to address group shortcomings."
-        }
+        "indicators": ["Follow set procedures and rules", "Takes appropriate measures to address group/team shortcomings", "Shows willingness to work overtime in order to meet set deadlines"]
       },
       {
         "name": "Health & Safety Awareness",
         "definition": "Adherence to health and safety laws to maintain a safe work environment.",
-        "levels": {
-          "2": "Monitors safety standards; identifies and reports hazards."
-        }
+        "indicators": ["Carefully organizes the personal workspace to minimize the likelihood of an accident", "Consistently adheres to detailed procedural instructions to carry out work activities safely"]
       }
     ],
     "3": [
       {
         "name": "Coaching & Leading Others",
         "definition": "Encouraging performance and fulfilling skill requirements of individuals and the organization.",
-        "levels": {
-          "3": "Suggests development activities; coaches through feedback; leads by example."
-        }
+        "indicators": ["Identifies or suggests activities that could help others develop new technical skills", "Coaches others by providing feedback relative to learning new competencies", "Reassures and/or expresses positive expectations for future performance", "Generates excitement, enthusiasm and commitment in people", "Leads by example; and aligns own behaviour with Al Esraa's vision and values"]
       },
       {
         "name": "Supervision",
         "definition": "Overseeing team performance and ensuring adherence to organizational standards.",
-        "levels": {
-          "3": "Monitors team performance; provides constructive feedback; ensures compliance with policies."
-        }
+        "indicators": ["Provides on-going feedback and performance reviews on time", "Supports the development of subordinates by providing ways and tools to improve their skills", "Addresses team performance problems and issues promptly", "Recognizes and encourages behaviours that contribute to teamwork"]
       },
       {
         "name": "Initiation",
         "definition": "Starting new projects and driving organizational change and improvement.",
-        "levels": {
-          "3": "Identifies improvement opportunities; proposes new initiatives; drives implementation."
-        }
+        "indicators": ["Thinks ahead and effectively prepares and organizes resources and activities", "Makes sure things aren't left to chance; ensures sufficient follow-up to check on progress", "Anticipates and prepares for problems that may interfere with work or attainment of results"]
       },
       {
         "name": "Problem Solving & Decision Making",
         "definition": "Analyzing complex issues and making sound decisions based on available information.",
-        "levels": {
-          "3": "Analyzes root causes; evaluates alternatives; makes timely decisions; considers stakeholder impact."
-        }
+        "indicators": ["Is able to consider information from multiple perspectives", "Has the confidence to take decisions and be accountable for mistakes", "Takes time to consider the short and long term outcomes and actions", "Collaborates with the team to make sound decisions by gathering input and feedback"]
       }
     ],
     "4": [
       {
         "name": "Results Orientation",
         "definition": "Focusing on achieving organizational goals and delivering measurable outcomes.",
-        "levels": {
-          "4": "Sets ambitious goals; drives accountability; celebrates achievements; measures success."
-        }
+        "indicators": ["Guides staff to achieve smart objectives and performance standards", "Evaluates others based on set and communicated KPIs", "Focuses on agreed targets and pushes for improved results in area of responsibility", "Takes on new roles and responsibilities when faced with unexpected changes"]
       },
       {
         "name": "Problem Solving & Decision Making",
         "definition": "Analyzing complex issues and making sound decisions based on available information.",
-        "levels": {
-          "4": "Addresses strategic challenges; makes decisions under uncertainty; considers long-term implications."
-        }
+        "indicators": ["Demonstrates strategic thinking in problem-solving", "Makes decisions that balance organizational objectives with stakeholder interests", "Anticipates future challenges and develops preventive strategies", "Leads complex decision-making processes involving multiple departments"]
       },
       {
         "name": "Visioning & Strategic Thinking",
-        "definition": "Creating a compelling vision for the future and developing long-term strategies.",
-        "levels": {
-          "4": "Articulates clear vision; aligns teams with strategy; anticipates market trends; builds sustainable advantage."
-        }
+        "definition": "Developing and communicating a compelling vision for the future.",
+        "indicators": ["Articulates a clear and compelling vision for the organization's future", "Thinks strategically about long-term organizational objectives", "Aligns departmental goals with organizational strategy", "Anticipates market trends and organizational needs"]
       },
       {
         "name": "Conflict Management",
-        "definition": "Addressing disagreements constructively and maintaining positive relationships.",
-        "levels": {
-          "4": "Mediates conflicts; finds win-win solutions; maintains team cohesion; models respectful dialogue."
-        }
+        "definition": "Managing and resolving conflicts constructively.",
+        "indicators": ["Addresses conflicts directly and professionally", "Seeks win-win solutions that satisfy all parties", "Maintains composure and objectivity in difficult situations", "Uses conflicts as opportunities for organizational learning and improvement"]
       }
     ]
   },
@@ -154,21 +122,19 @@
       {
         "name": "Technical Credibility",
         "levels": {
-          "1": "Applies basic procedures and regulations for service delivery.",
-          "2": "Acquires new skills; monitors performance to ensure instructions are applied.",
-          "3": "Works within guidelines; considers alternatives when guidelines are inappropriate.",
-          "4": "Demonstrates high-level technical abilities; motivates others to meet standards.",
-          "5": "Develops program goals; hires experts; addresses organizational training needs."
+          "1": ["Applies basic procedures and regulations for service delivery", "Follows standard operating procedures (SOPs)", "Complies with Good Manufacturing Practice (GMP)"],
+          "2": ["Operates equipment according to specifications", "Troubleshoots basic technical issues", "Maintains equipment in good working condition"],
+          "3": ["Optimizes production processes for efficiency", "Develops technical solutions to production challenges", "Mentors others on technical best practices"],
+          "4": ["Drives continuous improvement in production technology", "Sets technical standards and best practices", "Leads strategic technical initiatives"]
         }
       },
       {
         "name": "Managing Operation Process",
         "levels": {
-          "1": "Follows instructions and SOPs; follows GMP.",
-          "2": "Operates machines independently; detects problems; communicates with maintenance.",
-          "3": "Monitors performance of others; does machine work schedules; analyzes downtime.",
-          "4": "Enhances staff performance; reviews OEE; takes corrective/preventive actions.",
-          "5": "Sets strategic KPIs; does gap analysis; reports to CEO on production performance."
+          "1": ["Follows instructions and SOPs", "Follows GMP requirements", "Maintains basic operational records"],
+          "2": ["Operates production processes efficiently", "Monitors process parameters", "Reports operational issues promptly"],
+          "3": ["Optimizes production schedules and workflows", "Manages resources effectively", "Implements process improvements"],
+          "4": ["Develops strategic production plans", "Leads operational excellence initiatives", "Manages complex multi-site operations"]
         }
       }
     ],
@@ -176,21 +142,19 @@
       {
         "name": "Technical Credibility",
         "levels": {
-          "1": "Applies basic procedures and regulations.",
-          "2": "Acquires and applies new skills to keep current in field.",
-          "3": "Applies university/training learning on the job; considers alternatives.",
-          "4": "Reinforces others to do the job according to standards.",
-          "5": "Hires supervisors with appropriate mix of technical/managerial expertise."
+          "1": ["Applies basic procedures and regulations", "Understands engineering fundamentals", "Follows safety protocols"],
+          "2": ["Acquires and applies advanced technical knowledge", "Solves technical problems independently", "Contributes to technical projects"],
+          "3": ["Develops innovative engineering solutions", "Leads technical design initiatives", "Mentors junior engineers"],
+          "4": ["Drives engineering excellence", "Sets technical standards and specifications", "Leads strategic engineering initiatives"]
         }
       },
       {
         "name": "Maintenance & Repair",
         "levels": {
-          "1": "Follows instructions and SOPs.",
-          "2": "Inspects machines; determines causes of errors; troubleshoots according to procedures.",
-          "3": "Implements maintenance plans; creates machine URS; understands PLCs.",
-          "4": "Oversees installation and repair; ensures machines function to specifications.",
-          "5": "Keeps updated on cutting-edge technology; establishes safety procedures."
+          "1": ["Follows instructions and SOPs", "Performs basic maintenance tasks", "Reports equipment issues"],
+          "2": ["Inspects machines and detects problems", "Performs preventive maintenance", "Repairs equipment effectively"],
+          "3": ["Develops maintenance strategies", "Optimizes equipment performance", "Trains others on maintenance procedures"],
+          "4": ["Leads maintenance excellence programs", "Implements predictive maintenance systems", "Manages equipment lifecycle"]
         }
       }
     ],
@@ -198,19 +162,19 @@
       {
         "name": "Purchasing Techniques & Methods",
         "levels": {
-          "1": "Applies basic knowledge of procurement laws and accounting principles.",
-          "2": "Applies thorough knowledge of methods; stays abreast of changes; proposes revisions.",
-          "3": "Applies expert knowledge; analyzes complex issues; demonstrates innovation.",
-          "4": "Develops long-term leading practice approaches; understands global supply landscape."
+          "1": ["Applies basic knowledge of procurement laws and regulations", "Understands purchasing processes", "Follows procurement procedures"],
+          "2": ["Executes purchasing transactions efficiently", "Negotiates with suppliers", "Manages purchase orders"],
+          "3": ["Develops procurement strategies", "Optimizes supplier relationships", "Implements cost-saving initiatives"],
+          "4": ["Leads strategic procurement initiatives", "Develops supplier partnerships", "Drives procurement excellence"]
         }
       },
       {
         "name": "Supplier Evaluation & Selection",
         "levels": {
-          "1": "Provides tactical support; aware of importance of supplier development.",
-          "2": "Identifies potential sources; manages recommended source lists.",
-          "3": "Applies development techniques; develops partnership working; specifies evaluation factors.",
-          "4": "Identifies latest thinking; creates strategic relationships with core suppliers."
+          "1": ["Provides tactical support in supplier evaluation", "Understands importance of supplier quality", "Assists with supplier documentation"],
+          "2": ["Evaluates supplier performance metrics", "Participates in supplier selection", "Maintains supplier relationships"],
+          "3": ["Develops supplier evaluation criteria", "Leads supplier selection processes", "Manages supplier performance"],
+          "4": ["Develops strategic supplier partnerships", "Leads supplier development programs", "Drives supply chain excellence"]
         }
       }
     ],
@@ -218,19 +182,19 @@
       {
         "name": "Research & Innovation",
         "levels": {
-          "1": "Follows established research protocols and procedures.",
-          "2": "Conducts experiments; documents findings; proposes improvements to processes.",
-          "3": "Leads research initiatives; develops new methodologies; mentors junior researchers.",
-          "4": "Drives innovation strategy; secures funding; publishes findings; shapes industry standards."
+          "1": ["Follows established research protocols and procedures", "Assists with research projects", "Maintains laboratory records"],
+          "2": ["Conducts independent research", "Develops experimental designs", "Analyzes research data"],
+          "3": ["Leads research projects", "Develops innovative solutions", "Publishes research findings"],
+          "4": ["Drives R&D strategy", "Leads innovation initiatives", "Manages research portfolios"]
         }
       },
       {
         "name": "Technical Problem Solving",
         "levels": {
-          "1": "Identifies basic technical issues; seeks guidance on solutions.",
-          "2": "Troubleshoots technical problems; implements solutions independently.",
-          "3": "Analyzes complex technical challenges; develops innovative solutions; documents best practices.",
-          "4": "Addresses strategic technical challenges; builds technical expertise across teams."
+          "1": ["Identifies basic technical issues", "Seeks guidance on problem-solving", "Documents issues and solutions"],
+          "2": ["Analyzes technical problems systematically", "Develops technical solutions", "Tests and validates solutions"],
+          "3": ["Solves complex technical problems", "Develops innovative approaches", "Mentors others on problem-solving"],
+          "4": ["Leads technical problem-solving initiatives", "Develops problem-solving methodologies", "Drives technical excellence"]
         }
       }
     ],
@@ -238,19 +202,19 @@
       {
         "name": "Quality Assurance Standards",
         "levels": {
-          "1": "Follows QC procedures; performs basic testing and inspections.",
-          "2": "Conducts quality checks; identifies deviations; documents findings.",
-          "3": "Develops quality standards; trains team on QC procedures; analyzes quality trends.",
-          "4": "Establishes quality strategy; implements continuous improvement; ensures regulatory compliance."
+          "1": ["Follows QC procedures", "Performs basic testing and analysis", "Maintains quality records"],
+          "2": ["Conducts quality testing independently", "Identifies quality issues", "Documents quality findings"],
+          "3": ["Develops quality standards", "Implements quality improvements", "Leads quality initiatives"],
+          "4": ["Drives quality excellence", "Sets quality standards", "Manages quality systems"]
         }
       },
       {
         "name": "Testing & Analysis",
         "levels": {
-          "1": "Performs routine tests according to protocols.",
-          "2": "Conducts various tests; interprets results; maintains equipment.",
-          "3": "Develops testing methodologies; validates new procedures; troubleshoots test failures.",
-          "4": "Leads testing strategy; implements advanced testing technologies; ensures accuracy and reliability."
+          "1": ["Performs routine tests according to protocols", "Records test results", "Maintains testing equipment"],
+          "2": ["Conducts advanced testing procedures", "Analyzes test data", "Troubleshoots testing issues"],
+          "3": ["Develops testing methodologies", "Optimizes testing processes", "Trains others on testing procedures"],
+          "4": ["Leads testing excellence", "Implements advanced testing systems", "Manages testing programs"]
         }
       }
     ],
@@ -258,19 +222,19 @@
       {
         "name": "Process Improvement",
         "levels": {
-          "1": "Identifies basic process inefficiencies; suggests improvements.",
-          "2": "Analyzes processes; implements improvements; monitors effectiveness.",
-          "3": "Leads process redesign initiatives; implements best practices; drives organizational change.",
-          "4": "Develops strategic improvement programs; builds continuous improvement culture."
+          "1": ["Identifies basic process inefficiencies", "Suggests improvements", "Supports improvement initiatives"],
+          "2": ["Analyzes processes systematically", "Develops improvement proposals", "Implements improvements"],
+          "3": ["Leads process improvement projects", "Develops improvement strategies", "Measures improvement results"],
+          "4": ["Drives continuous improvement culture", "Implements lean/six sigma initiatives", "Manages improvement portfolios"]
         }
       },
       {
         "name": "Compliance & Audit",
         "levels": {
-          "1": "Understands compliance requirements; follows procedures.",
-          "2": "Conducts internal audits; identifies non-conformances; recommends corrective actions.",
-          "3": "Leads audit programs; manages corrective action plans; ensures regulatory compliance.",
-          "4": "Develops compliance strategy; manages external audits; ensures organizational excellence."
+          "1": ["Understands compliance requirements", "Follows procedures", "Maintains compliance documentation"],
+          "2": ["Monitors compliance", "Conducts internal audits", "Documents audit findings"],
+          "3": ["Develops compliance strategies", "Leads audit programs", "Implements corrective actions"],
+          "4": ["Drives compliance excellence", "Manages regulatory relationships", "Leads compliance initiatives"]
         }
       }
     ],
@@ -278,19 +242,19 @@
       {
         "name": "Financial Analysis",
         "levels": {
-          "1": "Performs basic financial calculations; maintains financial records.",
-          "2": "Analyzes financial data; prepares reports; identifies cost-saving opportunities.",
-          "3": "Develops financial strategies; manages budgets; provides strategic financial advice.",
-          "4": "Leads financial planning; manages organizational finances; drives financial performance."
+          "1": ["Performs basic financial calculations", "Maintains financial records", "Supports financial reporting"],
+          "2": ["Conducts financial analysis", "Interprets financial data", "Prepares financial reports"],
+          "3": ["Develops financial strategies", "Provides financial insights", "Leads financial planning"],
+          "4": ["Drives financial excellence", "Manages financial strategy", "Leads financial transformation"]
         }
       },
       {
         "name": "Accounting & Reporting",
         "levels": {
-          "1": "Records transactions; maintains ledgers; follows accounting procedures.",
-          "2": "Prepares financial statements; reconciles accounts; ensures accuracy.",
-          "3": "Manages accounting systems; develops reporting procedures; ensures compliance.",
-          "4": "Oversees financial reporting; manages external audits; ensures financial integrity."
+          "1": ["Records transactions", "Maintains ledgers", "Follows accounting procedures"],
+          "2": ["Manages accounting processes", "Prepares financial statements", "Ensures accuracy and compliance"],
+          "3": ["Develops accounting strategies", "Leads accounting teams", "Implements accounting systems"],
+          "4": ["Drives accounting excellence", "Manages financial reporting", "Leads accounting transformation"]
         }
       }
     ],
@@ -298,19 +262,19 @@
       {
         "name": "Talent Management",
         "levels": {
-          "1": "Assists with recruitment and onboarding processes.",
-          "2": "Manages recruitment; conducts interviews; develops onboarding programs.",
-          "3": "Develops talent strategies; manages succession planning; identifies high-potential employees.",
-          "4": "Leads HR strategy; builds organizational capability; manages executive talent."
+          "1": ["Assists with recruitment and onboarding processes", "Maintains employee records", "Supports HR activities"],
+          "2": ["Manages recruitment processes", "Conducts interviews", "Develops talent strategies"],
+          "3": ["Leads talent management programs", "Develops succession plans", "Implements talent strategies"],
+          "4": ["Drives talent excellence", "Manages organizational development", "Leads HR transformation"]
         }
       },
       {
         "name": "Employee Relations & Development",
         "levels": {
-          "1": "Supports employee inquiries; maintains employee records.",
-          "2": "Manages employee relations; conducts performance reviews; develops training programs.",
-          "3": "Leads employee engagement initiatives; manages conflict resolution; develops leaders.",
-          "4": "Develops organizational culture; manages employee experience; drives organizational effectiveness."
+          "1": ["Supports employee inquiries", "Maintains employee relations", "Assists with employee development"],
+          "2": ["Manages employee relations", "Conducts performance reviews", "Develops employee programs"],
+          "3": ["Leads employee development initiatives", "Manages organizational culture", "Implements employee programs"],
+          "4": ["Drives employee engagement", "Manages organizational effectiveness", "Leads HR strategy"]
         }
       }
     ]

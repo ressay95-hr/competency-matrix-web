@@ -48,19 +48,21 @@ export default function Home() {
     if (query) {
       Object.keys(filtered).forEach(key => {
         if (key === 'technical') {
-          filtered[key] = Object.fromEntries(
-            Object.entries(filtered[key]).map(([family, competencies]: any) => [
-              family,
-              competencies.filter((c: any) => 
-                c.name.toLowerCase().includes(query) ||
-                c.levels.toString().toLowerCase().includes(query)
-              )
-            ]).filter(([_, competencies]: any) => competencies.length > 0)
-          );
-        } else {
+          if (filtered[key] && typeof filtered[key] === 'object') {
+            filtered[key] = Object.fromEntries(
+              Object.entries(filtered[key]).map(([family, competencies]: any) => [
+                family,
+                Array.isArray(competencies) ? competencies.filter((c: any) => 
+                  c.name.toLowerCase().includes(query) ||
+                  (c.levels && c.levels.toString().toLowerCase().includes(query))
+                ) : []
+              ]).filter(([_, competencies]: any) => competencies.length > 0)
+            );
+          }
+        } else if (Array.isArray(filtered[key])) {
           filtered[key] = filtered[key].filter((c: any) =>
             c.name.toLowerCase().includes(query) ||
-            c.definition.toLowerCase().includes(query)
+            (c.definition && c.definition.toLowerCase().includes(query))
           );
         }
       });
@@ -256,26 +258,33 @@ export default function Home() {
           )}
 
           {/* Common Competencies */}
-          {(competencyTypeFilter === 'all' || competencyTypeFilter === 'common') && 
-           filteredCompetencies.common && filteredCompetencies.common.length > 0 && (
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <span className="w-3 h-3 bg-amber-600 rounded-full"></span>
-                Common Competencies ({competencyData.levels[selectedLevel! - 1].name})
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {filteredCompetencies.common.map((competency: any) => (
-                  <CompetencyCard
-                    key={competency.name}
-                    competency={competency}
-                    type="common"
-                    isExpanded={expandedCompetencies.has(competency.name)}
-                    onToggle={() => toggleCompetency(competency.name)}
-                  />
-                ))}
+          {competencyTypeFilter === 'all' || competencyTypeFilter === 'common' ? (
+            selectedLevel ? (
+              filteredCompetencies.common && filteredCompetencies.common.length > 0 && (
+                <div className="mb-12">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <span className="w-3 h-3 bg-amber-600 rounded-full"></span>
+                    Common Competencies ({competencyData.levels[selectedLevel - 1].name})
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {filteredCompetencies.common.map((competency: any) => (
+                      <CompetencyCard
+                        key={competency.name}
+                        competency={competency}
+                        type="common"
+                        isExpanded={expandedCompetencies.has(competency.name)}
+                        onToggle={() => toggleCompetency(competency.name)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )
+            ) : (
+              <div className="mb-12 p-8 bg-amber-50 border-2 border-amber-200 rounded-lg text-center">
+                <p className="text-amber-900 font-semibold">Please select a career level to view common competencies.</p>
               </div>
-            </div>
-          )}
+            )
+          ) : null}
 
           {/* Technical-Functional Competencies */}
           {(competencyTypeFilter === 'all' || competencyTypeFilter === 'technical') && 
