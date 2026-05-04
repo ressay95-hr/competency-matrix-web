@@ -11,20 +11,20 @@ interface CompetencyCardProps {
 const typeColors = {
   core: {
     bg: 'bg-red-50',
-    border: 'border-red-200',
-    badge: 'bg-red-100 text-red-700',
+    border: 'border-red-300',
+    badge: 'bg-red-100 text-red-800',
     header: 'text-red-900',
   },
   common: {
     bg: 'bg-amber-50',
-    border: 'border-amber-200',
-    badge: 'bg-amber-100 text-amber-700',
+    border: 'border-amber-300',
+    badge: 'bg-amber-100 text-amber-800',
     header: 'text-amber-900',
   },
   technical: {
-    bg: 'bg-gray-50',
-    border: 'border-gray-200',
-    badge: 'bg-gray-100 text-gray-700',
+    bg: 'bg-gray-100',
+    border: 'border-gray-400',
+    badge: 'bg-gray-200 text-gray-800',
     header: 'text-gray-900',
   },
 };

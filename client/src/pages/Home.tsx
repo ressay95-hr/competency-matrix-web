@@ -91,10 +91,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Header with Logo */}
-      <header className="bg-gradient-to-r from-red-800 to-red-900 text-white py-6 shadow-lg sticky top-0 z-50">
+      <header className="bg-gradient-to-r from-red-700 to-red-800 text-white py-6 shadow-lg sticky top-0 z-50">
         <div className="container flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img src="/manus-storage/AL-ESRAA-PHARMA_f66d3f1f.png" alt="AL-ESRAA Logo" className="h-12 w-auto" />
+            <img src="/manus-storage/al-esraa-logo_6ecd8cd1.png" alt="AL-ESRAA Logo" className="h-14 w-auto" />
             <div>
               <h1 className="text-3xl font-bold">Competency Matrix</h1>
               <p className="text-red-100 text-sm">AL-ESRAA Pharmaceuticals</p>
@@ -104,7 +104,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-amber-900 via-red-900 to-red-800 py-20 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-r from-red-800 via-red-700 to-red-900 py-20 text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
