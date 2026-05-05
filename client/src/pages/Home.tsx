@@ -91,13 +91,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Header with Logo */}
-      <header className="bg-gradient-to-r from-red-700 to-red-800 text-white py-6 shadow-lg sticky top-0 z-50">
-        <div className="container flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <img src="/manus-storage/al-esraa-logo_6ecd8cd1.png" alt="AL-ESRAA Logo" className="h-14 w-auto" />
-            <div>
-              <h1 className="text-3xl font-bold">Competency Matrix</h1>
-              <p className="text-red-100 text-sm">AL-ESRAA Pharmaceuticals</p>
+      <header className="bg-gradient-to-r from-red-700 to-red-800 text-white shadow-lg sticky top-0 z-50">
+        <div className="w-full px-4 py-4 flex items-center justify-center">
+          <div className="flex items-center gap-6 max-w-6xl w-full">
+            <img src="/manus-storage/al-esraa-logo_6ecd8cd1.png" alt="AL-ESRAA Logo" className="h-20 w-auto flex-shrink-0" />
+            <div className="flex-1">
+              <h1 className="text-4xl font-bold">Competency Matrix</h1>
+              <p className="text-red-100 text-base">AL-ESRAA Pharmaceuticals - Employee Development & Career Advancement Guide</p>
             </div>
           </div>
         </div>
@@ -167,6 +167,27 @@ export default function Home() {
             Core Competencies (All Employees)
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl">These fundamental competencies apply to all employees across all levels and are essential for success in any role at AL-ESRAA.</p>
+          
+          {/* Level Definitions */}
+          <div className="mb-12 grid md:grid-cols-4 gap-4">
+            <div className="bg-amber-50 border-2 border-amber-300 rounded-lg p-4">
+              <h4 className="font-bold text-amber-900 mb-2">Level 1</h4>
+              <p className="text-sm text-amber-800">Entry Level</p>
+            </div>
+            <div className="bg-red-50 border-2 border-red-300 rounded-lg p-4">
+              <h4 className="font-bold text-red-900 mb-2">Level 2</h4>
+              <p className="text-sm text-red-800">Supervisory Level</p>
+            </div>
+            <div className="bg-red-100 border-2 border-red-400 rounded-lg p-4">
+              <h4 className="font-bold text-red-950 mb-2">Level 3</h4>
+              <p className="text-sm text-red-900">Middle Management</p>
+            </div>
+            <div className="bg-red-900 border-2 border-red-950 rounded-lg p-4">
+              <h4 className="font-bold text-white mb-2">Level 4</h4>
+              <p className="text-sm text-red-100">Top Management</p>
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             {competencyData.core_competencies.map((comp) => (
               <CompetencyCard
