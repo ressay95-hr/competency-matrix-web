@@ -91,13 +91,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Header with Logo */}
-      <header className="bg-gradient-to-r from-amber-900 to-amber-950 text-white shadow-lg sticky top-0 z-50">
+      <header className="bg-white shadow-lg sticky top-0 z-50">
         <div className="w-full px-4 py-4 flex items-center justify-center">
           <div className="flex items-center gap-6 max-w-6xl w-full">
             <img src="/manus-storage/al-esraa-logo_6ecd8cd1.png" alt="AL-ESRAA Logo" className="h-20 w-auto flex-shrink-0" />
             <div className="flex-1">
-              <h1 className="text-4xl font-bold">Competency Matrix</h1>
-              <p className="text-amber-100 text-base">AL-ESRAA Pharmaceuticals - Employee Development & Career Advancement Guide</p>
+              <h1 className="text-4xl font-bold text-amber-900">Competency Matrix</h1>
+              <p className="text-gray-600 text-base">AL-ESRAA Pharmaceuticals - Employee Development & Career Advancement Guide</p>
             </div>
           </div>
         </div>
